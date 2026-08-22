@@ -1,13 +1,31 @@
 export const skills = [
-  { title: 'Biostatistique', icon: 'BarChart3', items: ['Tests d’hypothèses', 'Régression', 'Survie'] },
-  { title: 'Épidémiologie', icon: 'Activity', items: ['Études transversales', 'Facteurs de risque', 'Protocoles cliniques'] },
-  { title: 'Outils & Data', icon: 'Database', items: ['R', 'Jamovi', 'Nettoyage de données'] },
+  { title: 'Biostatistique', icon: 'BarChart3', items: ['Modélisation (Régression)', 'Bland-Altman & Concordance', 'Tests d’hypothèses (t-test, etc.)'] },
+  { title: 'Épidémiologie', icon: 'Activity', image: '/images/epidemio-accent.png', items: ['Études transversales descriptives', 'Évaluation de performance (MAE)', 'Mesure de reproductibilité (ICC)'] },
+  { title: 'Outils & Data', icon: 'Database', items: ['R (v4.5.0)', 'Jamovi & Excel', 'CSPro (Masques de saisie)'] },
 ]
 
 export const publications = [
-  { title: 'Séquelles post-chirurgicales de l’ankylose temporo-mandibulaire', description: 'Analyse transversale de 25 patients et impact de l’observance kinésithérapique.', href: '#' },
-  { title: 'Facteurs associés à l’hypertension artérielle', description: 'Exploration des déterminants cliniques et sociodémographiques dans une cohorte adulte.', href: '#' },
-  { title: 'La donnée clinique, de la collecte à la décision', description: 'Guide pratique pour fiabiliser les bases de recherche en santé.', href: '#' },
+  { 
+    title: 'Estimation de l’âge dentaire : London Atlas vs Camérière', 
+    description: 'Comparaison des performances biostatistiques et ajustement par régression linéaire spécifique. Évaluation de la concordance via graphes de Bland-Altman.', 
+    href: '#case-studies', 
+    thumbnail: '/images/pub-thumb-2.png',
+    images: ['/images/projects/image5.png', '/images/projects/image6.png'] 
+  },
+  { 
+    title: 'Séquelles post-chirurgicales de l’ankylose temporo-mandibulaire', 
+    description: 'Étude transversale descriptive sur 25 patients avec analyses statistiques des variables cliniques (CHU Yaoundé).', 
+    href: '#case-studies', 
+    thumbnail: '/images/pub-thumb-1.png',
+    images: ['/images/projects/image3.png']
+  },
+  { 
+    title: 'Conception d’un masque de saisie CSPro', 
+    description: 'Structuration, codification et contrôles de cohérence (sauts logiques) pour une collecte de qualité. Voici un aperçu de l\'interface de saisie développée.', 
+    href: '#case-studies', 
+    thumbnail: '/images/pub-thumb-3.png',
+    images: ['/images/projects/image1.png', '/images/projects/image2.png', '/images/projects/image4.png']
+  },
 ]
 
 export const rawRows = [
@@ -22,14 +40,24 @@ export const cleanRows = [
   ['003', '45', 'M', '2024-03-14', 'Non'],
 ]
 
-export const hypertensionData = [
-  { age: 28, pression: 112 }, { age: 35, pression: 121 }, { age: 42, pression: 128 },
-  { age: 49, pression: 137 }, { age: 58, pression: 146 }, { age: 67, pression: 154 },
+export const dentalAgeData = [
+  { method: 'London Atlas', mae: 1.02, r2: 0.853 },
+  { method: 'Camérière', mae: 0.92, r2: 0.855 },
 ]
 
-export const ankylosisData = [
-  { name: 'Kinésithérapie stricte', reankylose: 12, succes: 88 },
-  { name: 'Kinésithérapie irrégulière', reankylose: 45, succes: 55 },
+export const ankylosisAgeData = [
+  { name: '[0-10[', value: 8 }, // 8%
+  { name: '[10-20[', value: 40 }, // 40%
+  { name: '[20-30[', value: 36 }, // 36%
+  { name: '≥ 30', value: 16 }, // 16%
+]
+
+export const csproFeatures = [
+  'Contrôle des valeurs admissibles',
+  'Contrôle de cohérence',
+  'Sauts logiques',
+  'Champs obligatoires',
+  'Gestion des valeurs manquantes'
 ]
 
 export const navItems = [
@@ -42,16 +70,16 @@ export const stats = [
 ]
 
 export const services = [
-  ['Nettoyage de données cliniques', 'Fiabiliser, documenter et structurer vos bases de recherche.', 'FileEdit'],
-  ['Analyses descriptives & comparatives', 'Transformer vos observations en résultats lisibles et robustes.', 'PieChart'],
-  ['Modélisation épidémiologique', 'Identifier les associations et les facteurs qui comptent.', 'GitBranch'],
-  ['Rédaction de rapports statistiques', 'Présenter vos méthodes, résultats et limites avec clarté.', 'FileText'],
+  ['Conception de bases et masques de saisie', 'Développement de masques CSPro avec contrôles de cohérence et sauts logiques.', 'Database'],
+  ['Analyses descriptives & comparatives', 'Transformer vos données brutes en résultats lisibles (tests d\'hypothèses, ANOVA, t-test).', 'PieChart'],
+  ['Modélisation & Évaluation de performance', 'Régressions linéaires, analyse de concordance (Bland-Altman) et reproductibilité (ICC).', 'Activity'],
+  ['Rédaction de rapports statistiques', 'Présenter vos méthodes, résultats et limites avec clarté pour vos études cliniques.', 'FileText'],
 ]
 
-export const portraitUrl = 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=800'
+export const portraitUrl = '/images/portrait-illustration.png'
 export const contactEmail = 'contact@schammabeni.com'
 export const linkedinUrl = 'https://www.linkedin.com/'
-export const upworkUrl = 'https://www.upwork.com/'
+export const whatsappUrl = 'https://wa.me/237000000000' // TODO: add your phone number here
 
 export type IconName = 'BarChart3' | 'Activity' | 'Database' | 'FileEdit' | 'PieChart' | 'GitBranch' | 'FileText'
 

@@ -13,7 +13,7 @@ export default function Navbar() {
       <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-5 lg:px-8">
         <button onClick={() => go('top')} className="flex items-center gap-3" aria-label="Retour en haut">
           <span className="grid size-9 place-items-center rounded-xl bg-slate-900 text-sm font-bold text-white">FS</span>
-          <span className="hidden text-sm font-semibold tracking-tight text-slate-900 sm:block">FEUKOUO Schamma Beni</span>
+          <span className="hidden text-sm font-semibold tracking-tight text-slate-900 sm:block">Dr. FEUKOUO Schamma B.</span>
         </button>
         <nav className="hidden items-center gap-6 lg:flex" aria-label="Navigation principale">
           {navItems.map(([label, id]) => <button key={id} onClick={() => go(id)} className="text-sm text-slate-600 transition hover:text-teal-700">{label}</button>)}

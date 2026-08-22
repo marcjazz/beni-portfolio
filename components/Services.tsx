@@ -1,5 +1,5 @@
-import { FileEdit, FileText, GitBranch, PieChart } from 'lucide-react'
+import { FileEdit, FileText, GitBranch, PieChart, Database, Activity } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { services } from '@/lib/site-data'
-const icons = { FileEdit, PieChart, GitBranch, FileText }
+const icons = { FileEdit, PieChart, GitBranch, FileText, Database, Activity }
 export default function Services() { return <section id="services" className="bg-white py-24"><div className="mx-auto max-w-7xl px-5 lg:px-8"><p className="text-sm font-semibold uppercase tracking-[.18em] text-teal-700">Services</p><h2 className="mt-4 max-w-2xl text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl">De la base brute au résultat publiable.</h2><div className="mt-12 grid gap-5 sm:grid-cols-2">{services.map(([title, description, icon]) => { const Icon = icons[icon as keyof typeof icons]; return <Card key={title} className="border-slate-200 transition hover:-translate-y-1 hover:shadow-lg"><CardHeader><Icon className="text-teal-600" /><CardTitle className="mt-4 text-xl">{title}</CardTitle></CardHeader><CardContent><p className="leading-7 text-slate-600">{description}</p></CardContent></Card> })}</div></div></section> }
